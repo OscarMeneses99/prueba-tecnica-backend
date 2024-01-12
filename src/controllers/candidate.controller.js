@@ -7,7 +7,8 @@ import {
 export class CandidateController {
   static async getCandidates(req, res) {
     const candidates = await CandidateModel.getAll();
-    if (!candidates) res.status(404).json({ message: "Candidates not found" });
+    if (candidates.length == 0)
+      res.status(404).json({ message: "Candidates not found" });
     res.status(200).json(candidates);
   }
   static async createCandidate(req, res) {
@@ -21,7 +22,7 @@ export class CandidateController {
     const { id } = req.params;
     const validationResult = validatePartialCandidate(req.body);
     if (!validationResult.success)
-      res.status(400).json({ message: validationResult.error });
+      res.status(422).json({ error: validationResult.error.message });
     const updatedCandidate = await CandidateModel.update({
       id,
       validationResult,

@@ -1,2 +1,27 @@
 ###Recuperar todo los candidatos
 GET http://localhost:5000/api/candidates
+
+###Crear un candidato
+POST http://localhost:5000/api/candidates
+Content-Type: application/json
+
+{
+    "name": "Oscar Meneses Solís",
+    "age": 24,
+    "email": "meneses.solis.oscar99@gmail.com",
+    "phone": "5567039752",
+    "interviewDate": "2024-05-01",
+    "allSkills": ["JavaScript, HTML, CSS, React, Nodejs, AWS"],
+    "selectedSkills": ["JavaScript, HTML, CSS, React, Nodejs, AWS"]
+}
+
+###Actualizar un candidato
+PATCH http://localhost:5000/api/candidates/65a0a1a1d014f0606c1fd6b1
+Content-Type: application/json
+
+{
+    "age": 28
+}
+
+###Eliminar un candidato
+DELETE http://localhost:5000/api/candidates/65a0a1a1d014f0606c1fd6b1

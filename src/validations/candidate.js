@@ -4,7 +4,8 @@ const candidateSchema = z.object({
   name: z.string(),
   age: z.number().positive(),
   email: z.string().email(),
-  interviewDate: z.date(),
+  phone: z.string(),
+  interviewDate: z.string(),
   allSkills: z.array(z.string()),
   selectedSkills: z.array(z.string()),
 });
