@@ -11,8 +11,7 @@ Content-Type: application/json
     "email": "meneses.solis.oscar99@gmail.com",
     "phone": "5567039752",
     "interviewDate": "2024-05-01",
-    "allSkills": "JavaScript, HTML, CSS, React, Nodejs, AWS",
-    "selectedSkills": "JavaScript, HTML, CSS, React, Nodejs, AWS"
+    "skills": "JavaScript, HTML, CSS, React, Nodejs, AWS"
 }
 
 ###Actualizar un candidato
