@@ -1,4 +1,8 @@
 import { CandidateModel } from "../models/candidate.model.js";
+import {
+  validateCandidate,
+  validatePartialCandidate,
+} from "../validations/candidate.js";
 
 export class CandidateController {
   static async getCandidates(req, res) {
@@ -7,14 +11,21 @@ export class CandidateController {
     res.status(200).json(candidates);
   }
   static async createCandidate(req, res) {
-    const candidate = req.body;
-    const createdCandidate = await CandidateModel.create({ candidate });
+    const validationResult = validateCandidate(req.body);
+    if (!validationResult.success)
+      res.status(400).json({ message: validationResult.error });
+    const createdCandidate = await CandidateModel.create({ validationResult });
     res.status(201).json(createdCandidate);
   }
   static async updateCandidate(req, res) {
     const { id } = req.params;
-    const candidate = req.body;
-    const updatedCandidate = await CandidateModel.update({ id, candidate });
+    const validationResult = validatePartialCandidate(req.body);
+    if (!validationResult.success)
+      res.status(400).json({ message: validationResult.error });
+    const updatedCandidate = await CandidateModel.update({
+      id,
+      validationResult,
+    });
     if (!updatedCandidate)
       res.status(404).json({ message: "Candidate not found" });
     res.status(200).json(updatedCandidate);

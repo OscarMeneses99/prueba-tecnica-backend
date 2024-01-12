@@ -1,0 +1,2 @@
+###Recuperar todo los candidatos
+GET http://localhost:5000/api/candidates

@@ -4,14 +4,18 @@ export class CandidateModel {
   static async getAll() {
     return CandidateSchema.find();
   }
-  static async create({ candidate }) {
-    const newCandidate = new CandidateSchema(candidate);
+  static async create({ validationResult }) {
+    const newCandidate = new CandidateSchema(validationResult.data);
     return newCandidate.save();
   }
-  static async update({ id, candidate }) {
-    const updatedMovie = await Movie.findByIdAndUpdate(id, candidate.data, {
-      new: true,
-    });
+  static async update({ id, validationResult }) {
+    const updatedMovie = await Movie.findByIdAndUpdate(
+      id,
+      validationResult.data,
+      {
+        new: true,
+      }
+    );
     if (!updatedMovie) return false;
     return updatedMovie;
   }

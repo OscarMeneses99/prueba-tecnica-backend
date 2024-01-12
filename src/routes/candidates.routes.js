@@ -1,21 +1,14 @@
 import { Router } from "express";
+import { CandidateController } from "../controllers/candidate.controller.js";
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.send("Mostrar todos los candidatos");
-});
+router.get("/", CandidateController.getCandidates);
 
-router.post("/", (req, res) => {
-  res.send("Crear un candidato");
-});
+router.post("/", CandidateController.createCandidate);
 
-router.patch("/:id", (req, res) => {
-  res.send("Actualizar un candidato");
-});
+router.patch("/:id", CandidateController.updateCandidate);
 
-router.delete("/:id", (req, res) => {
-  res.send("Eliminar un candidato");
-});
+router.delete("/:id", CandidateController.deleteCandidate);
 
 export default router;
