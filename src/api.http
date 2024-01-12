@@ -24,4 +24,4 @@ Content-Type: application/json
 }
 
 ###Eliminar un candidato
-DELETE http://localhost:5000/api/candidates/65a0a1a1d014f0606c1fd6b1
+DELETE http://localhost:5000/api/candidates/65a0a1a1d014f0606c1fd6b1c

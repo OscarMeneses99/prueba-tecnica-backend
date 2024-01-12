@@ -7,8 +7,6 @@ import {
 export class CandidateController {
   static async getCandidates(req, res) {
     const candidates = await CandidateModel.getAll();
-    if (candidates.length == 0)
-      res.status(404).json({ message: "Candidates not found" });
     res.status(200).json(candidates);
   }
   static async createCandidate(req, res) {
