@@ -24,11 +24,11 @@ const candidateSchema = new mongoose.Schema(
       required: true,
     },
     allSkills: {
-      type: [String],
+      type: String,
       required: true,
     },
     selectedSkills: {
-      type: [String],
+      type: String,
       required: true,
     },
   },

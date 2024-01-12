@@ -6,8 +6,8 @@ const candidateSchema = z.object({
   email: z.string().email(),
   phone: z.string(),
   interviewDate: z.string(),
-  allSkills: z.array(z.string()),
-  selectedSkills: z.array(z.string()),
+  allSkills: z.string(),
+  selectedSkills: z.string(),
 });
 
 export function validateCandidate(candidate) {
