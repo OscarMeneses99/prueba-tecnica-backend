@@ -1,6 +1,4 @@
 {
-  "framework": "nodejs",
-  "target": "serverless",
   "build": {
     "command": "npm run build"
   },
