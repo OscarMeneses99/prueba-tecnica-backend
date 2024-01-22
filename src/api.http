@@ -1,8 +1,8 @@
 ###Recuperar todo los candidatos
-GET https://prueba-tecnica-backend-sp.onrender.com/api/candidates
+GET https://prueba-tecnica-backend-dev-rcns.2.us-1.fl0.io/api/candidates
 
 ###Crear un candidato
-POST https://prueba-tecnica-backend-sp.onrender.com/api/candidates
+POST https://prueba-tecnica-backend-dev-rcns.2.us-1.fl0.io/api/candidates
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ###Actualizar un candidato
-PATCH https://prueba-tecnica-backend-sp.onrender.com/api/candidates/
+PATCH https://prueba-tecnica-backend-dev-rcns.2.us-1.fl0.io/api/candidates/
 Content-Type: application/json
 
 {
@@ -23,4 +23,4 @@ Content-Type: application/json
 }
 
 ###Eliminar un candidato
-DELETE https://prueba-tecnica-backend-sp.onrender.com/api/candidates/
+DELETE https://prueba-tecnica-backend-dev-rcns.2.us-1.fl0.io/api/candidates/

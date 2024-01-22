@@ -31,7 +31,7 @@ export class CandidateController {
       const { id } = req.params;
       const validationResult = validatePartialCandidate(req.body);
       if (!validationResult.success)
-        res.status(422).json({ error: validationResult.error.message });
+        res.status(400).json({ error: validationResult.error.message });
       const updatedCandidate = await CandidateModel.update({
         id,
         validationResult,

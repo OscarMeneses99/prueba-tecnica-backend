@@ -1,11 +1,11 @@
 import z from "zod";
 
 const candidateSchema = z.object({
-  name: z.string(),
-  age: z.number().positive(),
+  name: z.string().min(10).max(50),
+  age: z.number().positive().min(18).max(100),
   email: z.string().email(),
-  phone: z.string(),
-  interviewDate: z.string(),
+  phone: z.string().min(10).max(15),
+  interviewDate: z.string().min(10).max(10),
   skills: z.string(),
 });
 
