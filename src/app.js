@@ -12,4 +12,8 @@ app.use(express.json());
 
 app.use('/api/candidates', CandidatesRoutes);
 
+app.get('/', (req, res) => {
+    res.send('Documentation');
+});
+
 export default app;
