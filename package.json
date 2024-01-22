@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node src/index.js"
+    "dev": "node --watch src/index.js",
+    "build": "rollup --config rollup.config.mjs",
+    "start": "node dist/index.cjs"
   },
   "keywords": [],
   "author": "",
